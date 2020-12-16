@@ -1,0 +1,39 @@
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - find_corona_status
+  - find_corona_status_for_location
+  - state_info
+
+entities:
+  - state
+
+slots:
+  state:
+    type: text
+
+actions:
+  - action_find_and_show_corona_status
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to Corona Tracker"
+  - text: "Hello, Welcome to Corona Tracker"
+
+  utter_goodbye:
+  - text: "Bye!"
+  - text: "Goodbye.."
+
+  utter_ask_location:
+  - text: "I can find the corona status for states. Which state do you need the corona status of?"
+
+  utter_finding_corona_status:
+  - text: "Ok, give me a second to look up the corona status of {state}"
+
+  utter_you_are_welcome:
+  - text: "I am happy to help!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
